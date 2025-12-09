@@ -310,22 +310,6 @@ python -m unittest discover -s tests -v
 
 ---
 
-## 💬 Interview Talking Points
-
-### Technical Depth
-> "The analytics module implements 15+ institutional-grade metrics with proper annualization, including VaR/CVaR for tail risk, Beta/Alpha for CAPM decomposition, and Sortino for downside-focused investors."
-
-### Architecture Decisions
-> "I separated data ingestion from analytics to allow swapping the data provider (e.g., Bloomberg, Refinitiv) without touching the calculation logic. The modular design also enables unit testing of each function in isolation."
-
-### Risk Awareness
-> "Every metric displayed has risk context: Sharpe-colored efficient frontiers, drawdown-first framing in the overview, and configurable VaR confidence levels. This reflects how PMs actually think about positions."
-
-### Production Readiness
-> "The app includes reproducibility features (random seed for Monte Carlo), auditability (CSV exports), and sensible defaults that produce a compelling story in under 10 seconds on commodity hardware."
-
----
-
 ## 🛠️ Tech Stack
 
 | Category | Technologies |
@@ -350,7 +334,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Tuan The Scientist**
 
 - GitHub: [@tuanthescientist](https://github.com/tuanthescientist)
-- LinkedIn: [Connect with me](#)
 
 ---
 

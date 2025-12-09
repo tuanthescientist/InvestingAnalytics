@@ -167,7 +167,7 @@ analyze_clicked = st.sidebar.button("🚀 Run Analysis", type="primary", use_con
 
 st.sidebar.divider()
 st.sidebar.markdown("**Made by Tuan The Scientist**")
-st.sidebar.markdown("[GitHub](https://github.com/tuanthescientist) | [LinkedIn](#)")
+st.sidebar.markdown("[GitHub](https://github.com/tuanthescientist)")
 
 # =============================================================================
 # HELPER FUNCTIONS
