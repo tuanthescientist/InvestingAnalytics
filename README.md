@@ -242,20 +242,21 @@ streamlit run app.py
 
 ### 🎓 Investment Philosophy & Framework
 
-Dự án này được xây dựng dựa trên các nguyên tắc đầu tư định lượng (Quantitative Investing) và lý thuyết danh mục đầu tư hiện đại (Modern Portfolio Theory - MPT). Dưới đây là các phương pháp luận cốt lõi:
+This project is built upon the principles of **Quantitative Investing** and **Modern Portfolio Theory (MPT)**. Below are the core methodologies implemented:
 
-#### 1. Modern Portfolio Theory (MPT) - Lý thuyết Danh mục Đầu tư Hiện đại
+#### 1. Modern Portfolio Theory (MPT)
 
-**Người sáng lập**: Harry Markowitz (1952) - Nobel Prize 1990
+**Founder**: Harry Markowitz (1952) - Nobel Prize in Economics 1990
 
-**Nguyên lý cốt lõi**: 
-- Nhà đầu tư có thể xây dựng danh mục "tối ưu" bằng cách đa dạng hóa để đạt được lợi nhuận kỳ vọng cao nhất với mức rủi ro chấp nhận được
-- Rủi ro của danh mục không chỉ phụ thuộc vào rủi ro từng tài sản riêng lẻ mà còn phụ thuộc vào **tương quan (correlation)** giữa các tài sản
+**Core Principles**: 
+- Investors can construct an "optimal" portfolio through diversification to achieve the highest expected return for a given level of risk
+- Portfolio risk depends not only on the individual asset risks but also on the **correlation** between assets
+- Diversification reduces unsystematic (idiosyncratic) risk while systematic (market) risk remains
 
-**Ứng dụng trong dự án**:
-- **Efficient Frontier Simulation**: Mô phỏng hàng nghìn danh mục ngẫu nhiên để tìm đường biên hiệu quả
-- **Correlation Matrix**: Phân tích tương quan để hiểu mức độ đa dạng hóa
-- **Portfolio Optimization**: Tìm danh mục Max Sharpe và Min Volatility
+**Implementation in this Project**:
+- **Efficient Frontier Simulation**: Simulate thousands of random portfolios to approximate the efficient frontier
+- **Correlation Matrix**: Analyze asset correlations to understand diversification benefits
+- **Portfolio Optimization**: Identify Max Sharpe and Min Volatility portfolios
 
 ```
                     Expected Return
@@ -270,55 +271,55 @@ Dự án này được xây dựng dựa trên các nguyên tắc đầu tư đ�
                          └──────────────────▶ Risk (Volatility)
 ```
 
-#### 2. Capital Asset Pricing Model (CAPM) - Mô hình Định giá Tài sản Vốn
+#### 2. Capital Asset Pricing Model (CAPM)
 
-**Người phát triển**: William Sharpe (1964) - Nobel Prize 1990
+**Developer**: William Sharpe (1964) - Nobel Prize in Economics 1990
 
-**Công thức CAPM**:
+**CAPM Formula**:
 $$E(R_i) = R_f + \beta_i \times (E(R_m) - R_f)$$
 
-Trong đó:
-- $E(R_i)$: Lợi nhuận kỳ vọng của tài sản
-- $R_f$: Lãi suất phi rủi ro (Risk-free rate)
-- $\beta_i$: Hệ số Beta (độ nhạy với thị trường)
-- $E(R_m)$: Lợi nhuận kỳ vọng của thị trường
+Where:
+- $E(R_i)$: Expected return of the asset
+- $R_f$: Risk-free rate (e.g., T-Bill yield)
+- $\beta_i$: Beta coefficient (sensitivity to market movements)
+- $E(R_m)$: Expected market return
 
-**Ý nghĩa các chỉ số**:
+**Interpretation Guide**:
 
-| Chỉ số | Ý nghĩa | Diễn giải |
-|--------|---------|-----------|
-| **Beta = 1** | Tài sản di chuyển cùng thị trường | Rủi ro hệ thống trung bình |
-| **Beta > 1** | Tài sản biến động mạnh hơn thị trường | Rủi ro cao, tiềm năng lợi nhuận cao |
-| **Beta < 1** | Tài sản ổn định hơn thị trường | Phòng thủ, ít rủi ro |
-| **Alpha > 0** | Vượt trội so với CAPM dự đoán | Quản lý danh mục có kỹ năng |
-| **Alpha < 0** | Kém hiệu quả so với kỳ vọng | Cần xem xét lại chiến lược |
+| Metric | Meaning | Implication |
+|--------|---------|-------------|
+| **Beta = 1** | Asset moves with the market | Average systematic risk |
+| **Beta > 1** | Asset is more volatile than market | Higher risk, higher potential return |
+| **Beta < 1** | Asset is more stable than market | Defensive, lower risk |
+| **Alpha > 0** | Outperforms CAPM prediction | Skilled portfolio management |
+| **Alpha < 0** | Underperforms expectations | Strategy needs review |
 
-#### 3. Risk-Adjusted Performance - Đo lường Hiệu suất Điều chỉnh Rủi ro
+#### 3. Risk-Adjusted Performance Metrics
 
-**Tại sao quan trọng?**: Lợi nhuận cao không có ý nghĩa nếu đi kèm rủi ro quá lớn. Các chỉ số điều chỉnh rủi ro giúp so sánh công bằng giữa các chiến lược đầu tư.
+**Why Important?**: High returns are meaningless if accompanied by excessive risk. Risk-adjusted metrics enable fair comparison between investment strategies.
 
-| Chỉ số | Công thức | Khi nào sử dụng |
-|--------|-----------|-----------------|
-| **Sharpe Ratio** | $(R_p - R_f) / \sigma_p$ | So sánh tổng thể, phổ biến nhất |
-| **Sortino Ratio** | $(R_p - R_f) / \sigma_{downside}$ | Quan tâm lỗ nhiều hơn lãi |
-| **Calmar Ratio** | $R_{ann} / \|MaxDD\|$ | Đánh giá khả năng phục hồi |
-| **Omega Ratio** | $\Sigma gains / \Sigma losses$ | Phân bổ xác suất đầy đủ |
-| **Treynor Ratio** | $(R_p - R_f) / \beta$ | Danh mục đa dạng hóa tốt |
+| Metric | Formula | When to Use |
+|--------|---------|-------------|
+| **Sharpe Ratio** | $(R_p - R_f) / \sigma_p$ | General comparison, most popular |
+| **Sortino Ratio** | $(R_p - R_f) / \sigma_{downside}$ | Focus on downside risk only |
+| **Calmar Ratio** | $R_{ann} / \|MaxDD\|$ | Assess recovery capability |
+| **Omega Ratio** | $\Sigma gains / \Sigma losses$ | Full probability distribution |
+| **Treynor Ratio** | $(R_p - R_f) / \beta$ | Well-diversified portfolios |
 
-**Hướng dẫn đọc Sharpe Ratio**:
-- **< 0**: Chiến lược tệ hơn giữ tiền mặt
-- **0 - 1**: Dưới trung bình, cần cải thiện
-- **1 - 2**: Tốt, chấp nhận được
-- **2 - 3**: Rất tốt, hiệu quả cao
-- **> 3**: Xuất sắc (hiếm, cần kiểm tra lại dữ liệu)
+**Sharpe Ratio Interpretation Guide**:
+- **< 0**: Strategy worse than holding cash
+- **0 - 1**: Below average, needs improvement
+- **1 - 2**: Good, acceptable performance
+- **2 - 3**: Very good, highly efficient
+- **> 3**: Excellent (rare, verify data integrity)
 
-#### 4. Value at Risk (VaR) & Conditional VaR - Quản trị Rủi ro Đuôi
+#### 4. Value at Risk (VaR) & Conditional VaR (CVaR)
 
-**VaR (Value at Risk)**: "Với độ tin cậy X%, tổn thất tối đa trong 1 ngày sẽ không vượt quá Y%"
+**VaR (Value at Risk)**: "With X% confidence, the maximum loss in one day will not exceed Y%"
 
-**Ví dụ**: VaR 95% = 2.5% có nghĩa: Trong 95% các ngày giao dịch, bạn sẽ không mất quá 2.5%
+**Example**: VaR 95% = 2.5% means: On 95% of trading days, you will not lose more than 2.5%
 
-**CVaR (Conditional VaR / Expected Shortfall)**: "Nếu tổn thất vượt quá VaR, trung bình bạn sẽ mất bao nhiêu?"
+**CVaR (Conditional VaR / Expected Shortfall)**: "If losses exceed VaR, what is the average loss?"
 
 ```
     Probability
@@ -339,39 +340,41 @@ Trong đó:
          │        Tail Risk Zone (5%)
 ```
 
-**Tại sao CVaR tốt hơn VaR?**:
-- VaR không cho biết mức độ nghiêm trọng khi tổn thất xảy ra
-- CVaR đo lường "đuôi" của phân phối - nơi các sự kiện hiếm nhưng thảm khốc xảy ra
+**Why CVaR is Superior to VaR**:
+- VaR does not indicate the severity of losses when they occur
+- CVaR measures the "tail" of the distribution - where rare but catastrophic events happen
+- CVaR is a coherent risk measure (satisfies subadditivity)
 
-#### 5. Drawdown Analysis - Phân tích Sụt giảm
+#### 5. Drawdown Analysis
 
-**Max Drawdown (MDD)**: Mức sụt giảm lớn nhất từ đỉnh đến đáy trong một khoảng thời gian
+**Max Drawdown (MDD)**: The largest peak-to-trough decline over a specific time period
 
 $$MDD = \frac{P_{trough} - P_{peak}}{P_{peak}} \times 100\%$$
 
-**Tại sao quan trọng?**:
-- Cho thấy "worst case scenario" thực tế đã xảy ra
-- Đánh giá khả năng chịu đựng tâm lý của nhà đầu tư
-- Calmar Ratio sử dụng MDD làm mẫu số
+**Why Important?**:
+- Shows the actual "worst case scenario" that occurred
+- Assesses investor's psychological tolerance
+- Calmar Ratio uses MDD as the denominator
 
-**Ví dụ thực tế**:
-| Sự kiện | S&P 500 Max Drawdown | Thời gian phục hồi |
-|---------|----------------------|-------------------|
-| Dot-com Crash (2000-2002) | -49% | ~7 năm |
-| Financial Crisis (2008-2009) | -57% | ~4 năm |
-| COVID Crash (2020) | -34% | ~5 tháng |
+**Historical Examples**:
+| Event | S&P 500 Max Drawdown | Recovery Time |
+|-------|----------------------|---------------|
+| Dot-com Crash (2000-2002) | -49% | ~7 years |
+| Financial Crisis (2008-2009) | -57% | ~4 years |
+| COVID Crash (2020) | -34% | ~5 months |
 
-#### 6. Monte Carlo Simulation - Mô phỏng Monte Carlo
+#### 6. Monte Carlo Simulation
 
-**Nguyên lý**: Sử dụng tính ngẫu nhiên để ước lượng kết quả có thể xảy ra
+**Principle**: Use randomness to estimate possible outcomes through repeated sampling
 
-**Ứng dụng trong Portfolio Optimization**:
-1. Tạo ngẫu nhiên N bộ trọng số danh mục (ví dụ: 5000 bộ)
-2. Tính Expected Return và Volatility cho mỗi danh mục
-3. Vẽ tất cả các điểm (Risk, Return) lên đồ thị
-4. Xác định Efficient Frontier - đường biên các danh mục tối ưu
+**Application in Portfolio Optimization**:
+1. Generate N random portfolio weight combinations (e.g., 5,000 sets)
+2. Calculate Expected Return and Volatility for each portfolio
+3. Plot all (Risk, Return) points on a scatter chart
+4. Identify the Efficient Frontier - the boundary of optimal portfolios
+5. Locate Max Sharpe and Min Volatility portfolios
 
-**Reproducibility**: Sử dụng Random Seed để đảm bảo kết quả có thể tái tạo
+**Reproducibility**: Use Random Seed to ensure results can be replicated
 
 ---
 
