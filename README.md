@@ -12,6 +12,8 @@
 
 [Features](#-features) • [Demo](#-quick-demo) • [Installation](#-installation) • [Documentation](#-methodology) • [Contributing](#-contributing)
 
+**Author:** Tuan Tran
+
 </div>
 
 ---
@@ -469,7 +471,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Tuan The Scientist**
+**Tuan Tran**
 
 - GitHub: [@tuanthescientist](https://github.com/tuanthescientist)
 

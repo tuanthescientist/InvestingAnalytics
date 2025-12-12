@@ -1,6 +1,5 @@
 import unittest
 import pandas as pd
-import numpy as np
 from src.analysis import calculate_returns, calculate_volatility
 
 class TestAnalysis(unittest.TestCase):

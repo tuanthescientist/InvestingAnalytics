@@ -1,6 +1,6 @@
 import yfinance as yf
 import pandas as pd
-from typing import List, Optional
+from typing import List
 
 def fetch_stock_data(tickers: List[str], start_date: str, end_date: str) -> pd.DataFrame:
     """

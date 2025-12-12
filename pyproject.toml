@@ -1,0 +1,11 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+# Keep this lightweight to avoid churning the codebase.
+select = ["F"]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests often use patterns ruff flags; keep it relaxed.
+"tests/**" = []

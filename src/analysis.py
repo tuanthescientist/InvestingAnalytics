@@ -4,7 +4,7 @@ This module provides institutional-grade financial metrics for portfolio analysi
 All functions follow industry-standard conventions and are designed for use in
 professional fund management contexts.
 
-Author: Tuan The Scientist
+Author: Tuan Tran
 Version: 2.0.0
 """
 

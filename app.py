@@ -5,7 +5,7 @@ Professional Investment Analytics Dashboard
 A comprehensive portfolio analysis and optimization tool designed for 
 professional fund managers and investment analysts.
 
-Author: Tuan The Scientist
+Author: Tuan Tran
 Version: 2.0.0
 """
 
@@ -166,7 +166,7 @@ with st.sidebar.expander("🔧 Advanced Settings", expanded=False):
 analyze_clicked = st.sidebar.button("🚀 Run Analysis", type="primary", use_container_width=True)
 
 st.sidebar.divider()
-st.sidebar.markdown("**Made by Tuan The Scientist**")
+st.sidebar.markdown("**Made by Tuan Tran**")
 st.sidebar.markdown("[GitHub](https://github.com/tuanthescientist)")
 
 # =============================================================================
