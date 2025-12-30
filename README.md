@@ -8,7 +8,7 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-*A comprehensive investment analytics dashboard designed for professional fund managers*
+*A comprehensive investment analytics dashboard designed for investment professionals*
 
 [Features](#-features) • [Demo](#-quick-demo) • [Installation](#-installation) • [Documentation](#-methodology) • [Contributing](#-contributing)
 
